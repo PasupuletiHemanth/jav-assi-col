@@ -16,11 +16,11 @@ public class OrderService {
 	{
 		if(lstOrder.isEmpty())
 		{
-			for(int i=0;i<12;i++)
+			for(int i=1;i<13;i++)
 			{
 				Order order=new Order();
 				order.setCustName("Sample Customer Name"+i);
-				order.setOrderNo("Sample orderNo "+i);
+				order.setOrderNo(100000+i);
 				order.setHandOverPoint("Sample HandOver Point"+i);
 				lstOrder.add(order);
 			}
@@ -34,7 +34,7 @@ public class OrderService {
 
 	public Order getOrderByOrderNo(String orderNo) {
 		// TODO Auto-generated method stub
-		return lstOrder.stream().filter(t->t.getOrderNo()==orderNo).findFirst().get();
+		return lstOrder.stream().filter(t->t.getOrderNo()==Integer.parseInt(orderNo)).findFirst().get();
 	}
 
 }

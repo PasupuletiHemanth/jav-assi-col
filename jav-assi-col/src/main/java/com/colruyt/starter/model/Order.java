@@ -3,7 +3,7 @@ package com.colruyt.starter.model;
 public class Order {
 	
 	private String custName;
-	private String orderNo;
+	private int orderNo;
 	private String handOverPoint;
 	public String getCustName() {
 		return custName;
@@ -11,10 +11,10 @@ public class Order {
 	public void setCustName(String custName) {
 		this.custName = custName;
 	}
-	public String getOrderNo() {
+	public int getOrderNo() {
 		return orderNo;
 	}
-	public void setOrderNo(String orderNo) {
+	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
 	public String getHandOverPoint() {
@@ -23,5 +23,4 @@ public class Order {
 	public void setHandOverPoint(String handOverPoint) {
 		this.handOverPoint = handOverPoint;
 	}
-
 }
