@@ -1,9 +1,18 @@
 package com.colruyt.starter.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="orders")
 public class Order {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long orderNo;
 	private String custName;
-	private int orderNo;
 	private String handOverPoint;
 	public String getCustName() {
 		return custName;
@@ -11,10 +20,10 @@ public class Order {
 	public void setCustName(String custName) {
 		this.custName = custName;
 	}
-	public int getOrderNo() {
+	public long getOrderNo() {
 		return orderNo;
 	}
-	public void setOrderNo(int orderNo) {
+	public void setOrderNo(long orderNo) {
 		this.orderNo = orderNo;
 	}
 	public String getHandOverPoint() {
