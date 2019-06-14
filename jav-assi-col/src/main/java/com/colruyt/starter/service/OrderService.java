@@ -42,7 +42,7 @@ public class OrderService {
 
 	public Order getOrderByOrderNo(String orderNo) {
 		// TODO Auto-generated method stub
-		return lstOrder.stream().filter(t->t.getOrderNo()==Integer.parseInt(orderNo)).findFirst().get();
+		return orderRepository.findByOrderNo(Long.parseLong(orderNo)).stream().filter(t->t.getOrderNo()==Integer.parseInt(orderNo)).findFirst().get();
 	}
 
 }

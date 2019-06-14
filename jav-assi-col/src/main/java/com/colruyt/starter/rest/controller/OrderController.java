@@ -28,16 +28,16 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/orders")
-	public List<Order> getAllStudents()
+	public List<Order> getAllOrders()
 	{
 		return orderService.getAllOrders();
 	}
 	
 	
 	@RequestMapping("/order/{orderNo}")
-	public Order getOrderByOrderNo(@PathVariable String OrderNo)
+	public Order getOrderByOrderNo(@PathVariable String orderNo)
 	{
-		return orderService.getOrderByOrderNo(OrderNo);
+		return orderService.getOrderByOrderNo(orderNo);
 	}
 
 }
