@@ -22,7 +22,7 @@ import com.colruyt.starter.service.EmployeeService;
 public class EmployeeController {
 
 	@Autowired
-	EmployeeService employeeService;
+	private EmployeeService employeeService;
 
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployee() {

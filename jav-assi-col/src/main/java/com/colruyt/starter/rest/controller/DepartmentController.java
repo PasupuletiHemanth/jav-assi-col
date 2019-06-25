@@ -2,6 +2,7 @@ package com.colruyt.starter.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,4 +23,11 @@ public class DepartmentController {
 		System.out.println("in cre dept"+department.getDepName());
         return departmentService.addDepartment(department);
     }
+	
+	@GetMapping("/testUtil")
+	public String testUtil()
+	{
+		Integer i=departmentService.testAddUtil(4, 5);
+		return i.toString();
+	}
 }
