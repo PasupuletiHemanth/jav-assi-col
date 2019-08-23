@@ -12,32 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.colruyt.starter.model.Order;
+import com.colruyt.starter.model.OrderDetails;
+import com.colruyt.starter.service.OrderDetailsService;
 import com.colruyt.starter.service.OrderService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-public class OrderController {
+public class OrderDetailsController {
 	
 	@Autowired
-	OrderService orderService;
+	OrderDetailsService orderDetailsService;
 	
-	@RequestMapping("/hello")
-	public String sayHello()
-	{
-		return "Hello";
-	}
 	
-	@RequestMapping("/orders")
-	public List<Order> getAllOrders()
+	@RequestMapping("/orderDetails")
+	public List<OrderDetails> getAllStudents()
 	{
-		return orderService.getAllOrders();
+		return orderDetailsService.getAllOrderDetails();
 	}
 	
 	
-	@RequestMapping("/order/{orderNo}")
-	public Order getOrderByOrderNo(@PathVariable String orderNo)
+	@RequestMapping("/orderDetails/{orderNo}")
+	public List<OrderDetails> getOrderByOrderNo(@PathVariable String orderNo)
 	{
-		return orderService.getOrderByOrderNo(orderNo);
+		return orderDetailsService.getOrderDetailsByOrderNo(orderNo);
 	}
 
 }
